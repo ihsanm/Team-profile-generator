@@ -72,6 +72,39 @@ function start () {
                 return "Please enter at least one character.";
               }
             },
+            {
+                type: "input",
+                name: "managerId",
+                message: "What is your managers Id?",
+                validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter at least one character.";
+                }
+            },
+            {
+                type: "input",
+                name: "managerEmail",
+                message: "What is your managers email?",
+                validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter at least one character.";
+                }
+            },
+            {
+                type: "input",
+                name: "managerOfficeNumber",
+                message: "What is your managers office number?",
+                validate: answer => {
+                    if (answer !== "") {
+                      return true;
+                    }
+                    return "Please enter at least one character.";
+                }
+            },
             /* {ask for id},
               {ask for email},
               {ask for office number}
