@@ -144,8 +144,8 @@ function start () {
            } else if (userChoice.internOrengineer == "engineer"){
             return createEngineer();
            } else {
-            // return buildTeam();
-            console.log("hello")
+            return buildTeam();
+            
            };
         })
     }
@@ -207,9 +207,15 @@ function start () {
             team.push(intern);
             createTeam();
         })
-    }
+    };
     // function to buildTeam - will use fs.writeFileSync & pass in the outputPath created above, call to render (dont forget to pass in the employee array), & "utf-8"
-        
+
+    function buildTeam(){
+        if (!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdirSync(OUTPUT_DIR);
+          }
+        fs.writeFileSync(outputPath, render(team), "utf-8")
+    }
     createManager(); // starts of the whole chain of events. 
 }
 
