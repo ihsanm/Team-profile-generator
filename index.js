@@ -127,7 +127,7 @@ function start () {
                     type: "checkbox",
                     name: "internOrengineer",
                     message: "do you want to choose an engineer or an intern?",
-                    choices: ["intern","engineer"]
+                    choices: ["intern","engineer","I don't want to add anything else"]
                 }
         ]).then(userChoice => {
             /* conditional that decides which of the below functions to call
@@ -137,12 +137,13 @@ function start () {
                
             */
            
-           if (userChoice = "intern"){
-            createIntern();
-           } else if (userChoice = "engineer"){
-            createEngineer();
+           if (userChoice.internOrengineer == "intern"){
+            return createIntern();
+           } else if (userChoice.internOrengineer == "engineer"){
+            return createEngineer();
            } else {
-            return buildTeam();
+            // return buildTeam();
+            console.log("hello")
            };
         })
     }
@@ -152,7 +153,7 @@ function start () {
         inquirer.prompt([
             {
                 type:"input",
-                name:"engineer",
+                name:"engineerName",
                 message: "engineer"
             }
         ])
@@ -162,7 +163,7 @@ function start () {
         inquirer.prompt([
             {
                 type:"input",
-                name:"intern",
+                name:"internName",
                 message: "intern"
             }
         ])
