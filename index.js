@@ -199,7 +199,10 @@ function start () {
                 name: "internSchool",
                 message: "what is your interns school?"
             }
-        ])
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            createTeam();
+        })
     }
     // function to buildTeam - will use fs.writeFileSync & pass in the outputPath created above, call to render (dont forget to pass in the employee array), & "utf-8"
         
