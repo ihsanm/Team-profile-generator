@@ -154,7 +154,23 @@ function start () {
             {
                 type:"input",
                 name:"engineerName",
-                message: "engineer"
+                message: "What is the engineers name?"
+            },
+            {
+                type:"input",
+                name: "engineerId",
+                message: "What is your engineers Id?",
+
+            },
+            {
+                type:"input",
+                name:"engineerEmail",
+                message:"What is your engineers email?"
+            },
+            {
+                type:"input",
+                name:"engineerGithub",
+                message: "what is your engineers Github username?"
             }
         ])
     }
