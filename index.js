@@ -171,8 +171,10 @@ function start () {
                 type:"input",
                 name:"engineerGithub",
                 message: "what is your engineers Github username?"
-            }
-        ])
+            }]).then(answers => {
+                const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+                createTeam();
+            })
     }
     // function to handle generating intern
     function createIntern(){
