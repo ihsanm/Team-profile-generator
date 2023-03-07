@@ -123,20 +123,50 @@ function start () {
         inquirer.prompt([
             // question asking what we should make next
                 // choices(engineer, intern, I dont want to add anything else)
+                {
+                    type: "checkbox",
+                    name: "internOrengineer",
+                    message: "do you want to choose an engineer or an intern?",
+                    choices: ["intern","engineer"]
+                }
         ]).then(userChoice => {
             /* conditional that decides which of the below functions to call
                 based on userChoice. 
-
+                
                 - If none of the choices (engineer or employee) have been chosen default to buildTeam()
                
             */
+           
+           if (userChoice = "intern"){
+            createIntern();
+           } else if (userChoice = "engineer"){
+            createEngineer();
+           } else {
+            return buildTeam();
+           };
         })
     }
 
     // function to handle generating engineer
-
+    function createEngineer(){
+        inquirer.prompt([
+            {
+                type:"input",
+                name:"engineer",
+                message: "engineer"
+            }
+        ])
+    }
     // function to handle generating intern
-
+    function createIntern(){
+        inquirer.prompt([
+            {
+                type:"input",
+                name:"intern",
+                message: "intern"
+            }
+        ])
+    }
     // function to buildTeam - will use fs.writeFileSync & pass in the outputPath created above, call to render (dont forget to pass in the employee array), & "utf-8"
         
     createManager(); // starts of the whole chain of events. 
