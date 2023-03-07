@@ -55,6 +55,7 @@ const render = require("./src/page-template.js");
 
 //           ex of structure below:    
 // */
+let team = [];
 
 function start () {
 
@@ -112,6 +113,7 @@ function start () {
           ]).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
             // push to team array
+            team.push(manager);
             // call the next function that will ask what type of employee will be created next
             createTeam();
           })
@@ -173,6 +175,7 @@ function start () {
                 message: "what is your engineers Github username?"
             }]).then(answers => {
                 const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+                team.push(engineer);
                 createTeam();
             })
     }
@@ -201,6 +204,7 @@ function start () {
             }
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            team.push(intern);
             createTeam();
         })
     }
