@@ -180,7 +180,22 @@ function start () {
             {
                 type:"input",
                 name:"internName",
-                message: "intern"
+                message: "what is your interns name?"
+            },
+            {
+                type: "input",
+                name: "internId",
+                messasge: "what is your interns Id?"
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What is your interns email?",
+            },
+            {
+                type: "input",
+                name: "internSchool",
+                message: "what is your interns school?"
             }
         ])
     }
